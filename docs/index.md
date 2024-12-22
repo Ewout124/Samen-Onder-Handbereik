@@ -7,7 +7,7 @@ title: Samen Onder Handbereik
 
 Deze tekst is toegevoegd door Ewout, in de repository Ewout124/Samen-Onder-Handbereik. 
 En deze tekst is lokaal toegevoegd op de laptop van Ewout. Daarna is een push uitgevoerd naar de remote repository. Eens kijken of die tekst dan zichtbaar wordt in de GitHub Pages-site. 
-Deze tekst is toegevoegd om een deploy te forceren, na vervanging van logo van VNG door logo van JenV in repository jekyll-theme-soh.  
+Deze tekst is toegevoegd om een deploy te forceren, na vervanging van logo van VNG door logo van JenV in repository jekyll-theme-soh. En nog een keer een geforceerde deploy.  
 
 Deze API is relevant bij uitvoering van de Omgevingswet, i.h.b. bij het opstellen en onderhouden van zgn. toepasbare regels. Het verschaft de toepasbare regelmaker actuele informatie over de juridische regels en bijbehorende werkingsgebieden en actviteiten waarvoor toepasbare regels opgesteld of aangepast gaan worden.  
 De API maakt het mogelijk om gegevens op te vragen, bij een applicatie die invulling geeft aan de Omgevingswetbeleidcomponent, ook wel aangeduid als plansoftware, over (Omgevingswet-)activiteiten en/of (bijbehorende) juridische regels, regelteksten en locaties. Die gegevens maken deel uit van de vastlegging van omgevingsdocumenten, zoals een omgevingsplan, met genoemde applicatie. Het betreft regels en annotaties zoals die op het moment van opvragen vastgelegd (in de plansofware) zijn; er kan dus sprake zijn van nog niet vastgestelde of gepubliceerde gegevens. Het betreft dan bijvoorbeeld een beoogde wijziging van een omgevingsplan.  
