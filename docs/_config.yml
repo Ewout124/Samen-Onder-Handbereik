@@ -19,9 +19,9 @@ nav:
 #        url: https://vng-realisatie.github.io/Haal-Centraal-BRK-bevragen/user-stories-prod
 #        https://github.com/VNG-Realisatie/Haal-Centraal-BRK-bevragen/issues?q=is%3Aissue+label%3A%22user+story%22+label%3A%22BRK+bevragen+v1.2%22
 #        path: /user-stories
-      - title: Melding API (swagger-ui)
+      - title: Bevragen API (swagger-ui)
         path: /swagger-ui
-      - title: Melding API (redoc)
+      - title: Bevragen API (redoc)
         path: /redoc
 #  - title: Specificaties v. 1.0.0-rc2 (In Ontwikkeling)
 #    subnav:
@@ -41,12 +41,12 @@ plugins:
   - jekyll-redirect-from
   - jekyll-remote-theme
 
-remote_theme: Ewout124/jekyll-theme-soh
+remote_theme: VNG-Realisatie/jekyll-theme-vng-realisatie
 
-github: Ewout124/Samen-Onder-Handbereik
+github: VNG-Realisatie/Regels-bij-activiteiten
 
 theme: jekyll-theme-time-machine
 
 project_name: /Samen-Onder-Handbereik
 
-# standard_family: Omgevingswet
+standard_family: Omgevingswet
