@@ -45,7 +45,7 @@ remote_theme: Ewout124/jekyll-theme-soh
 
 github: VNG-Realisatie/Regels-bij-activiteiten
 
-theme: jekyll-theme-time-machine
+# theme: jekyll-theme-time-machine
 
 project_name: /Samen-Onder-Handbereik
 
