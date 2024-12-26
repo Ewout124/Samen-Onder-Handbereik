@@ -3,7 +3,7 @@ layout: page-with-side-nav
 title: Samen Onder Handbereik
 ---
 
-# Inleiding
+# Inleiding 
 
 ## Aanleiding
 De jeugdketens en zorg en veiligheidsketen kennen een lange geschiedenis van samenwerken. In 2010 is een referentiearchitectuur Jeugdketens [1] gemaakt. Deze stelt: “de inhoud mag verschillen per keten of samenwerking, maar op procesniveau lijken de processen verdacht veel op elkaar en op oplossingsniveau is de gelijkenis nog veel groter”. Belangrijkste thema’s waren zicht op ieder kind voor de beroepskracht middels een verzameling van 10 goed uitgekiende centrale ketenvoorzieningen die iedereen zou gebruiken (waaronder IFM en GCOS). 
