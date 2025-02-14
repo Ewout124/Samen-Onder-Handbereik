@@ -12,9 +12,17 @@ nav:
     subnav:
       - title: Main
         path: /
-  - title: Specificaties v. 1.0.0 
+  - title: Samenwerkfuncties
     subnav:
-      - title: Melding API (swagger-ui)
+      - title: Sub 1
+        path: /samenwerkfuncties-sub1
+  - title: Architectuur
+    subnav:
+      - title: Sub 1
+        path: /architectuur-sub1
+  - title: API's 
+    subnav:
+      - title: Melding API (swagger)
         path: /swagger-ui
       - title: Melding API (redoc)
         path: /redoc
