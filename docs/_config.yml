@@ -20,12 +20,24 @@ nav:
     subnav:
       - title: Sub 1
         path: /architectuur-sub1
+  - title: Informatiemodel
+    subnav:
+      - title: Sub 1
+        path: /informatiemodel-sub1
+  - title: Projecten
+    subnav:
+      - title: Sub 1
+        path: /projecten-sub1
   - title: API's 
     subnav:
       - title: Melding API (swagger)
         path: /swagger-ui
       - title: Melding API (redoc)
         path: /redoc
+  - title: Onboarding
+    subnav:
+      - title: Sub 1
+        path: /Onboarding-sub1
 
 plugins:
   - jekyll-redirect-from
