@@ -37,7 +37,7 @@ nav:
   - title: Onboarding
     subnav:
       - title: Sub 1
-        path: /Onboarding-sub1
+        path: /onboarding-sub1
 
 plugins:
   - jekyll-redirect-from
