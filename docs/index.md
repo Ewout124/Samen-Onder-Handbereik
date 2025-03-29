@@ -35,7 +35,7 @@ Dit document probeert een goede balans te vinden tussen zeggingskracht en leesba
 
 ## Experiment
 
-Dit is een experiment, om te kijken hoe er een link gemaakt kan worden naar een [bestand](https;//ewout124.github.io/Samen-Onder-Handbereik/docs/resources/20241126-Federatief-Sociaal-Domein-Stelsel.pptx).
+Dit is een experiment, om te kijken hoe er een link gemaakt kan worden naar een [bestand](/docs/resources/20241126-Federatief-Sociaal-Domein-Stelsel.pptx).
 
 ```
 Copyright 2023 Ministerie J&V
