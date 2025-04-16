@@ -6,12 +6,14 @@ servers:
   url: "https://www.voorbeeldgemeente.nl/api/jzv_meldingen/v1"
 info:
   title: "JZV Meldingen"
-  description: "Dit is de beschrijving van de API Melding."
+  description: "Dit is de beschrijving van de API Melding.  In deze variant blijven\
+    \ de operations beperkt tot de GET van een enkele melding en van een collection\
+    \ van meldingen."
   version: "1.0"
-  x-imvertor-generator-version: "4.2.0 - EVALUATION VERSION, PLEASE REGISTER!"
+  x-imvertor-generator-version: "4.3.0"
   x-yamlCompiler-stylesheets-version: "20231117"
   contact:
-    url: "http://justid./nl/JZV-Melding"
+    url: "http://justid.nl/JZV-Melding"
     email: "e.boter@justid.nl"
   license:
     name: "European Union Public License, version 1.2 (EUPL-1.2)"
@@ -20,6 +22,13 @@ paths:
   /meldingen:
     get:
       operationId: "getcollectionmeldingen"
+      description: "Dit zijn de Notes bij Getberichttype Getmeldingen."
+      parameters:
+      - in: "query"
+        name: "soort"
+        required: false
+        schema:
+          $ref: "#/components/schemas/SoortMeldingEnum"
       responses:
         200:
           description: "Zoekactie geslaagd"
@@ -64,138 +73,16 @@ paths:
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Meldingen"
-    post:
-      operationId: "postmeldingen"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Melding"
-      responses:
-        201:
-          description: "OK"
-          headers:
-            Location:
-              description: "URI van de nieuwe resource"
-              schema:
-                type: "string"
-                format: "uri"
-                example: "/meldingen/"
-            api-version:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
-            warning:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Melding"
-        400:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        409:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
-      tags:
-      - "Meldingen"
-    put:
-      operationId: "putmeldingen"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Melding"
-      responses:
-        200:
-          description: "Zoekactie geslaagd"
-          headers:
-            api-version:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
-            warning:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
-            X-Rate-Limit-Limit:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
-            X-Rate-Limit-Remaining:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
-            X-Rate-Limit-Reset:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Melding"
-        400:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        409:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
-      tags:
-      - "Meldingen"
   /meldingen/{registratienummer}:
-    delete:
-      operationId: "deletemeldingenRegistratienummer"
-      parameters:
-      - in: "path"
-        name: "registratienummer"
-        required: true
-        schema:
-          type: "string"
-      responses:
-        200:
-          description: "Verwijderactie geslaagd"
-          headers:
-            api-version:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
-        204:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/204"
-        404:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
-      tags:
-      - "Meldingen"
     get:
       operationId: "getresourcemeldingenRegistratienummer"
+      description: "Dit zijn de Notes bij Getberichttype Getmelding."
       parameters:
       - in: "path"
         name: "registratienummer"
         required: true
         schema:
           type: "string"
-      - in: "query"
-        name: "soort"
-        required: false
-        schema:
-          $ref: "#/components/schemas/SoortMeldingEnum"
       responses:
         200:
           description: "Zoekactie geslaagd"
@@ -240,105 +127,6 @@ paths:
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Meldingen"
-  /uitkomstmeldingen:
-    post:
-      operationId: "postuitkomstmeldingen"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/UitkomstMelding"
-      responses:
-        201:
-          description: "OK"
-          headers:
-            Location:
-              description: "URI van de nieuwe resource"
-              schema:
-                type: "string"
-                format: "uri"
-                example: "/uitkomstmeldingen/"
-            api-version:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
-            warning:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/UitkomstMelding"
-        400:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        409:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
-      tags:
-      - "Uitkomstmeldingen"
-    put:
-      operationId: "putuitkomstmeldingen"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/UitkomstMelding"
-      responses:
-        200:
-          description: "Zoekactie geslaagd"
-          headers:
-            api-version:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
-            warning:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
-            X-Rate-Limit-Limit:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
-            X-Rate-Limit-Remaining:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
-            X-Rate-Limit-Reset:
-              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/UitkomstMelding"
-        400:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        409:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
-      tags:
-      - "Uitkomstmeldingen"
   /uitkomstmeldingen/{registratienummer}:
     get:
       operationId: "getresourceuitkomstmeldingenRegistratienummer"
@@ -400,7 +188,7 @@ components:
       - $ref: "#/components/schemas/MeldingAbstract"
       - type: "object"
         description: "Een verstrekking van informatie over een bepaalde situatie.\
-          \ Zie deze [link] (https://justitieconnect.nl/gmk/06b5a57a-44a5-4d57-96f5-80b6d74ea74f))"
+          \ Zie verder deze link Tijdstip: 08:10 uur."
         required:
         - "incident"
         - "natuurlijkPersoon"
@@ -570,7 +358,7 @@ components:
           type: "string"
           title: "burgerservicenummer"
           description: "De identificatie zoals bedoeld in artikel 1.1 van de Wet algemene\
-            \ bepalingen burgerservicenummer."
+            \ bepalingen burgerservicenummer. Zie verder deze link)"
           pattern: "^[0-9]{9}$"
         communicatiemiddel:
           type: "array"
