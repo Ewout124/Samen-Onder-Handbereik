@@ -188,8 +188,7 @@ components:
       - $ref: "#/components/schemas/MeldingAbstract"
       - type: "object"
         description: "Een verstrekking van informatie over een bepaalde situatie.\
-          \ Zie verder deze [link](https://srk-begrippen.wikixl.nl/index.php/Begrip:Id-0ba4494a-3c6d-76eb-499d-366d79ad29b2)\
-          \ Tijdstip: 08:10 uur."
+          \ Zie verder deze [link](https://srk-begrippen.wikixl.nl/index.php/Begrip:Id-0ba4494a-3c6d-76eb-499d-366d79ad29b2)."
         required:
         - "incident"
         - "natuurlijkPersoon"
