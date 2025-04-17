@@ -10,7 +10,7 @@ info:
     \ de operations beperkt tot de GET van een enkele melding en van een collection\
     \ van meldingen."
   version: "1.0"
-  x-imvertor-generator-version: "4.3.0"
+  x-imvertor-generator-version: "4.4.0"
   x-yamlCompiler-stylesheets-version: "20231117"
   contact:
     url: "http://justid.nl/JZV-Melding"
@@ -188,7 +188,8 @@ components:
       - $ref: "#/components/schemas/MeldingAbstract"
       - type: "object"
         description: "Een verstrekking van informatie over een bepaalde situatie.\
-          \ Zie verder deze link Tijdstip: 08:10 uur."
+          \ Zie verder deze [link](https://srk-begrippen.wikixl.nl/index.php/Begrip:Id-0ba4494a-3c6d-76eb-499d-366d79ad29b2)\
+          \ Tijdstip: 08:10 uur."
         required:
         - "incident"
         - "natuurlijkPersoon"
@@ -358,7 +359,7 @@ components:
           type: "string"
           title: "burgerservicenummer"
           description: "De identificatie zoals bedoeld in artikel 1.1 van de Wet algemene\
-            \ bepalingen burgerservicenummer. Zie verder deze link)"
+            \ bepalingen burgerservicenummer. Zie verder deze [link](https://srk-begrippen.wikixl.nl/index.php/Begrip:Id-789a1b43-e9f3-9996-7455-7269799d50de))"
           pattern: "^[0-9]{9}$"
         communicatiemiddel:
           type: "array"
