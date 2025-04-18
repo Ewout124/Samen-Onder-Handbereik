@@ -13,6 +13,8 @@ Als er een nieuwe Melding wordt geregistreerd in de informatiehuishouding van ee
 
 Hieronder een voorbeeld van hoe een CloudEvent eruit zou kunnen zien. 
 
+```json
+
 {
  "specversion": "1.0",
   "id": "5e35e9cb-e821-43c8-ac48-e1f5a0ad0361",
@@ -28,6 +30,8 @@ Hieronder een voorbeeld van hoe een CloudEvent eruit zou kunnen zien.
     "melding-inzage": "http://politie.nl/api/melding/{MELDING.Registratienummer}",
   }
 }
+
+```
 
 Toelichting bij een paar van de attributen
 
