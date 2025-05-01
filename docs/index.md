@@ -33,10 +33,6 @@ In vijf workshops gingen we van problemen en doelen via behoeften naar samenwerk
 
 Dit document probeert een goede balans te vinden tussen zeggingskracht en leesbaarheid. We hebben gefocussed op de essentie, zodat het beknopt en leesbaar voor iedereen is. De insteek is pragmatisch, met focus op enkele belangrijke thema’s en bijbehorende principes: de hoofdlijn. Nuanceringen hebben we niet altijd gemaakt, verdere uitwerking en concretisering moeten we ter hand gaan nemen.
 
-## Experiment
-
-Dit is een experiment, om te kijken hoe er een link gemaakt kan worden naar een [bestand](/Samen-Onder-Handbereik/resources/20241126-Federatief-Sociaal-Domein-Stelsel.pptx).
-
 ```
 Copyright 2023 Ministerie J&V
 
