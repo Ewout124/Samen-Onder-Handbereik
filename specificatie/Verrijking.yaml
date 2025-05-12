@@ -1,0 +1,393 @@
+openapi: "3.0.0"
+servers:
+- description: "SwaggerHub API Auto Mocking"
+  url: "https://virtserver.swaggerhub.com/VNGRealisatie/api/jzv_verrijkingen/v1"
+- description: "Referentie-implementatie"
+  url: "https://www.voorbeeldgemeente.nl/api/jzv_verrijkingen/v1"
+info:
+  title: "JZV Verrijkingen"
+  description: "Dit is de beschrijving van de API Verrijking. Het betreft de Notes\
+    \ bij de package «Koppelvlak»."
+  version: "1.0"
+  x-imvertor-generator-version: "4.4.0"
+  x-yamlCompiler-stylesheets-version: "20231117"
+  contact:
+    url: "http://justid.nl/JZV-Verrijking"
+    email: "e.boter@justid.nl"
+  license:
+    name: "European Union Public License, version 1.2 (EUPL-1.2)"
+    url: "https://eupl.eu/1.2/nl/"
+paths:
+  /verrijkingen:
+    get:
+      operationId: "getcollectionverrijkingen"
+      description: "Met deze operation kunnen verrijkingsverzoeken worden opgevraagd\
+        \ die voldoen aan bepaalde selectiecriteria. Er kan worden geselecteerd op\
+        \ de volgende attributen: redenVerzoek verrijkingsInstrument verrijkingsVraag"
+      parameters:
+      - in: "query"
+        name: "redenVerzoek"
+        required: true
+        schema:
+          $ref: "#/components/schemas/RedenVerzoekEnum"
+      - in: "query"
+        name: "verrijkingsInstrument"
+        required: true
+        schema:
+          $ref: "#/components/schemas/VerrijkingsInstrumentEnum"
+      - in: "query"
+        name: "verrijkingsVraag"
+        required: true
+        schema:
+          $ref: "#/components/schemas/VerrijkingsVraagEnum"
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Verrijking"
+        400:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/403"
+        409:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/default"
+      tags:
+      - "Verrijkingen"
+  /verrijkingen/{registratienummer}:
+    get:
+      operationId: "getresourceverrijkingenRegistratienummer"
+      description: "Met deze operation wordt een specifiek verrijkingsverzoek opgevraagd,\
+        \ aan de hand van het registratienummer."
+      parameters:
+      - in: "path"
+        name: "registratienummer"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Verrijking"
+        400:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/403"
+        404:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/404"
+        409:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/Ewout124/Justid/main/API-Kennisbank/common/common.yaml#/components/responses/default"
+      tags:
+      - "Verrijkingen"
+
+components:
+  schemas:
+    Verrijking:
+      type: "object"
+      description: ""
+      required:
+      - "natuurlijkPersoon"
+      - "omschrijving"
+      - "redenVerzoek"
+      - "registratienummer"
+      properties:
+        natuurlijkPersoon:
+          $ref: "#/components/schemas/NatuurlijkPersoon"
+        omschrijving:
+          type: "string"
+          title: "omschrijving"
+          description: ""
+          minLength: 1
+        redenVerzoek:
+          $ref: "#/components/schemas/RedenVerzoekEnum"
+        registratienummer:
+          type: "string"
+          title: "registratienummer"
+          description: ""
+          minLength: 1
+        verrijkingsInstrument:
+          type: "array"
+          minItems: 0
+          items:
+            $ref: "#/components/schemas/VerrijkingsInstrumentEnum"
+        verrijkingsVraag:
+          type: "array"
+          minItems: 0
+          items:
+            $ref: "#/components/schemas/VerrijkingsVraagEnum"
+    Adres:
+      type: "object"
+      description: ""
+      required:
+      - "soortAdres"
+      - "straatAdres"
+      properties:
+        soortAdres:
+          $ref: "#/components/schemas/SoortAdresEnum"
+        straatAdres:
+          $ref: "#/components/schemas/Straatadres"
+    Communicatiemiddel:
+      type: "object"
+      description: "Een manier om met de natuurlijk persoon in contact te komen."
+      required:
+      - "type"
+      - "waarde"
+      properties:
+        type:
+          $ref: "#/components/schemas/CommunicatiemiddelEnum"
+        waarde:
+          type: "string"
+          title: "waarde"
+          description: ""
+          minLength: 1
+    Geboorte:
+      type: "object"
+      description: "Gegevens over de geboorte van een natuurlijk persoon, zoals beschreven\
+        \ in het Burgerlijk Wetboek."
+      required:
+      - "datum"
+      properties:
+        datum:
+          type: "string"
+          title: "datum"
+          description: "De datum van de geboorte of de geboortedatum volgens het Art\
+            \ 1:19b BW."
+          format: "date"
+    Naam:
+      type: "object"
+      description: "De verzameling van tot een persoon behorende gegevens waarmede\
+        \ deze (rechtens) aan het maatschappelijk verkeer deel neemt."
+      required:
+      - "geslachtsnaam"
+      properties:
+        geslachtsnaam:
+          type: "string"
+          title: "geslachtsnaam"
+          description: "De (geslachts)naam waarvan de eventueel aanwezige voorvoegsels\
+            \ (tabel 36) en adellijke titel/predikaat (tabel 38) zijn afgesplitst."
+          minLength: 1
+        voorletters1:
+          type: "string"
+          title: "voorletters1"
+          description: "De verzameling letters die wordt gevormd door de eerste letter\
+            \ van alle in volgorde voorkomende voornamen."
+        voornamen:
+          type: "string"
+          title: "voornamen"
+          description: "De verzameling namen die, gescheiden door spaties, aan de\
+            \ geslachtsnaam voorafgaat."
+        voorvoegselGeslachtsnaam:
+          type: "string"
+          title: "voorvoegselGeslachtsnaam"
+          description: "Dat deel van de geslachtsnaam dat voorkomt in Tabel 36, Voorvoegseltabel\
+            \ en, gescheiden door een spatie, vooraf gaat aan de rest van de geslachtsnaam."
+    NatuurlijkPersoon:
+      type: "object"
+      description: "Een persoon die drager is van rechten en plichten."
+      required:
+      - "adres"
+      - "burgerservicenummer"
+      - "naam"
+      properties:
+        adres:
+          $ref: "#/components/schemas/Adres"
+        burgerservicenummer:
+          type: "string"
+          title: "burgerservicenummer"
+          description: "De identificatie zoals bedoeld in artikel 1.1 van de Wet algemene\
+            \ bepalingen burgerservicenummer. Zie verder deze [link](https://srk-begrippen.wikixl.nl/index.php/Begrip:Id-789a1b43-e9f3-9996-7455-7269799d50de))"
+          pattern: "^[0-9]{9}$"
+        communicatiemiddel:
+          type: "array"
+          minItems: 0
+          items:
+            $ref: "#/components/schemas/Communicatiemiddel"
+        geboorte:
+          $ref: "#/components/schemas/Geboorte"
+        geslachtsaanduiding:
+          $ref: "#/components/schemas/GeslachtEnum"
+        naam:
+          $ref: "#/components/schemas/Naam"
+    Straatadres:
+      type: "object"
+      description: ""
+      required:
+      - "huisletter"
+      - "huisnummer"
+      - "straatnaam"
+      properties:
+        huisletter:
+          type: "string"
+          title: "huisletter"
+          description: ""
+          minLength: 1
+        huisnummer:
+          type: "number"
+          title: "huisnummer"
+          description: ""
+        straatnaam:
+          type: "string"
+          title: "straatnaam"
+          description: ""
+          minLength: 1
+    CommunicatiemiddelEnum:
+      type: "string"
+      description: "<body><ul><li>`Vaste telefoon` - 01 </li><li>`Mobiele telefoon`\
+        \ - 02 </li><li>`Emailadres` - 03 </li></ul></body>"
+      enum:
+      - "Vaste telefoon"
+      - "Mobiele telefoon"
+      - "Emailadres"
+    GeslachtEnum:
+      type: "string"
+      description: "<body><ul><li>`man` - Man </li><li>`vrouw` - Vrouw </li><li>`anders`\
+        \ - Anders </li><li>`onbekend` - Onbekend </li></ul></body>"
+      enum:
+      - "man"
+      - "vrouw"
+      - "anders"
+      - "onbekend"
+    RedenVerzoekEnum:
+      type: "string"
+      description: "<body><ul><li>`01` - Verrijking VT-melding </li><li>`02` - Verrijking\
+        \ ZVH-melding </li><li>`03` - Bekendheid vanuit intake/triage/casusoverleg\
+        \ BASISTAKEN ZVH </li><li>`04` - Bekendheid vanuit intake/triage/casusoverleg\
+        \ PLUSTAKEN ZVH </li><li>`05` - Bekendheid op het gebied van radicalisering\
+        \ </li><li>`06` - Bekendheid t.b.v. afdoeningbeslissing OM </li></ul></body>"
+      enum:
+      - "01"
+      - "02"
+      - "03"
+      - "04"
+      - "05"
+      - "06"
+    SoortAdresEnum:
+      type: "string"
+      description: "<body><ul><li>`01` - Post- of correspondentieadres </li><li>`02`\
+        \ - Woon- of verblijfadres </li><li>`03` - GBA-adres </li></ul></body>"
+      enum:
+      - "01"
+      - "02"
+      - "03"
+    VerrijkingsInstrumentEnum:
+      type: "string"
+      description: "<body><ul><li>`01` - Verrijkingsinstrument 01 </li><li>`02` -\
+        \ Verrijkingsinstrument 02 </li></ul></body>"
+      enum:
+      - "01"
+      - "02"
+    VerrijkingsVraagEnum:
+      type: "string"
+      description: "<body><ul><li>`GI-001` - Is sprake van een lopende civiele maatregel\
+        \ zijnde een OTS/UHP/Voogdij? </li><li>`GI-002` - Is er in het verleden sprake\
+        \ geweest van een maatregel binnen het civiele kader? </li><li>`GI-003` -\
+        \ Is sprake van een lopende JR-maatregel in het strafrechtelijk kader? </li><li>`GI-004`\
+        \ - Is er in het verleden sprake geweest van een maatregel in een strafrechtelijk\
+        \ kader? </li><li>`GI-005` - Is sprake van actieve hulpverlening in het vrijwillig\
+        \ kader? </li><li>`GI-006` - Is er in het verleden sprake geweest van hulpverlening\
+        \ in het vrijwillig kader? </li><li>`POL-001` - Is sprake van relevante registraties\
+        \ op het gebied van (huiselijk) geweld en kindermishandeling? </li><li>`POL-002`\
+        \ - Is sprake van andere relevante registraties op basis waarvan de veiligheid\
+        \ (van minderjarigen) in het huishouden mogelijk in het geding is? </li><li>`POL-003`\
+        \ - Zijn er relevante registraties in de politiesystemen (afgesloten of actief)\
+        \ voor de opgevraagde betrokkene die naar oordeel van de Politie een rol kunnen\
+        \ spelen m.b.t. de potentiele casus in het ZVH? </li><li>`POL-004` - s er\
+        \ sprake van overlast? </li><li>`POL-005` - Is er sprake van risico’s voor\
+        \ de omgeving? </li><li>`POL-006` - Is er sprake van risico’s voor slachtoffer(s)?\
+        \ </li><li>`RVDK-001` - Is er op dit moment sprake van onderzoek naar de noodzaak\
+        \ van een civiele maatregel? </li><li>`RVDK-002` - Is er sprake geweest van\
+        \ een onderzoek naar de noodzaak van een civiele maatregel? </li><li>`RVDK-003`\
+        \ - Is sprake van een actief onderzoek op verzoek van de rechtbank in het\
+        \ kader van G&O? </li><li>`RVDK-004` - Is er sprake geweest een onderzoek\
+        \ op verzoek van de rechtbank in het kader van G&O? </li><li>`RVDK-005` -\
+        \ Is er op dit moment sprake van betrokkenheid in strafrechtelijk kader? </li><li>`RVDK-006`\
+        \ - Is er sprake geweest van betrokkenheid in strafrechtelijk kader? </li><li>`VT-001`\
+        \ - Is deze persoon bij VT bekend? </li><li>`VT-002` - Is er een lopende casus\
+        \ bij VT? </li><li>`VT-003` - Is het dossier ouder dan 2 jaar? </li><li>`GEM-001`\
+        \ - Is er voor deze persoon een lopend traject vanuit de Wmo of Jeugdwet?\
+        \ </li><li>`GEM-002` - Is er in de afgelopen 2 jaar een traject geweest vanuit\
+        \ de Wmo/Jeugdwet? </li></ul></body>"
+      enum:
+      - "GI-001"
+      - "GI-002"
+      - "GI-003"
+      - "GI-004"
+      - "GI-005"
+      - "GI-006"
+      - "POL-001"
+      - "POL-002"
+      - "POL-003"
+      - "POL-004"
+      - "POL-005"
+      - "POL-006"
+      - "RVDK-001"
+      - "RVDK-002"
+      - "RVDK-003"
+      - "RVDK-004"
+      - "RVDK-005"
+      - "RVDK-006"
+      - "VT-001"
+      - "VT-002"
+      - "VT-003"
+      - "GEM-001"
+      - "GEM-002"
