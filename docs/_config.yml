@@ -31,9 +31,9 @@ nav:
   - title: API's 
     subnav:
       - title: Melding API (swagger)
-        path: /swagger-ui
+        path: /melding-swagger-ui
       - title: Melding API (redoc)
-        path: /redoc
+        path: /melding-redoc
   - title: CloudEvents
     subnav:
       - title: CloudEvent Melding
